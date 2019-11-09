@@ -1495,6 +1495,13 @@
     <None Include="ConjuntoDatos\ds_RptVentasxTurno.xss">
       <DependentUpon>ds_RptVentasxTurno.xsd</DependentUpon>
     </None>
+    <None Include="Font\ARIALN.TTF" />
+    <None Include="Font\ARIALNB.TTF" />
+    <None Include="Font\ARIALNBI.TTF" />
+    <None Include="Font\ARIALNI.TTF" />
+    <None Include="Font\BarcodeFont.ttf" />
+    <None Include="Font\Code39r.ttf" />
+    <None Include="Font\TAHOMA.TTF" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
