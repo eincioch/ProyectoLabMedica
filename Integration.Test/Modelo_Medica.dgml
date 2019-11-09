@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="(@1)" Category="SolutionFolder" Bounds="461.000003051758,41.920099999604,123.85,25.96" Label="4. Capa Persistencia" UseManualLocation="True" />
+    <Node Id="(@4)" Category="SolutionFolder" Bounds="133.491666666667,52.96,116.866666666667,25.96" Label="2. Capa Aplicacion" UseManualLocation="True" />
+    <Node Id="(@5)" Category="SolutionFolder" Bounds="24.8683333333333,-32.04,130.113333333333,25.96" Label="1. Capa Presentacion" UseManualLocation="True" />
+    <Node Id="(@6)" Category="SolutionFolder" Bounds="287.048333333333,79.96,107.753333333333,25.96" Label="3. Capa Dominio" UseManualLocation="True" />
+    <Node Id="(@7)" Category="SolutionFolder" Bounds="577.48,-15.04,84.89,25.96" Label="5. Instalador" UseManualLocation="True" />
+    <Node Id="@3" Category="CodeSchema_Solution" Bounds="272.371666666667,-60,139.106666666667,25.96" Label="Integration.SystemDev" UseManualLocation="True" />
+  </Nodes>
+  <Links>
+    <Link Source="@3" Target="(@1)" Category="Contains" Bounds="364.976196971869,-34.0400004577637,127.055425198451,71.5442082866281" />
+    <Link Source="@3" Target="(@4)" Category="Contains" Bounds="216.350593496506,-34.0400004577637,108.33821947273,81.5859004816828" />
+    <Link Source="@3" Target="(@5)" Category="Contains" Bounds="163.926772389395,-39.3028929783797,108.44489732903,12.0322188480622" />
+    <Link Source="@3" Target="(@6)" Category="Contains" Bounds="341.082043707412,-34.0400004577637,0.750218278546015,105.000230173457" />
+    <Link Source="@3" Target="(@7)" Category="Contains" Bounds="411.216278137471,-35.8137562077974,157.379149742279,25.4523991611121" />
+  </Links>
+  <Categories>
+    <Category Id="CodeSchema_Solution" Label="Solución" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" NavigationActionLabel="Soluciones" />
+    <Category Id="Contains" Label="Contiene" Description="Indica si el origen del vínculo contiene el objeto de destino." CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contenido por" IsContainment="True" OutgoingActionLabel="Contiene" />
+    <Category Id="SolutionFolder" Label="Carpeta de soluciones" Description="Carpetas de soluciones" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" IsProviderRoot="False" NavigationActionLabel="Microsoft.Contains" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsProviderRoot" Label="IsProviderRoot" Description="IsProviderRoot" DataType="System.Boolean" />
+    <Property Id="Label" Label="Etiqueta" Description="Etiqueta Displayable de un objeto Annotatable." DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+  </Properties>
+  <QualifiedNames>
+    <Name Id="Assembly" Label="Ensamblado" ValueType="Uri" />
+  </QualifiedNames>
+  <IdentifierAliases>
+    <Alias n="1" Uri="Assembly=$(VsSolutionUri)/4. Capa Persistencia" />
+    <Alias n="2" Uri="Assembly=$(VsSolutionUri)/Integration.SystemDev.sln" />
+    <Alias n="3" Id="(@2)" />
+    <Alias n="4" Uri="Assembly=$(VsSolutionUri)/2. Capa Aplicacion" />
+    <Alias n="5" Uri="Assembly=$(VsSolutionUri)/1. Capa Presentacion" />
+    <Alias n="6" Uri="Assembly=$(VsSolutionUri)/3. Capa Dominio" />
+    <Alias n="7" Uri="Assembly=$(VsSolutionUri)/5. Instalador" />
+  </IdentifierAliases>
+  <Paths>
+    <Path Id="VsSolutionUri" Value="file:///E:/Aplicativos/SistemaMedica/Integration.System" />
+  </Paths>
+</DirectedGraph>

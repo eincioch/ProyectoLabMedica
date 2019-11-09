@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tempuri.org" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BiomedServices" targetNamespace="http://tempuri.org" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://10.0.0.5:8080/HIS_Biomed/BiomedServices?xsd=1" namespace="http://tempuri.org" />
+    </xsd:schema>
+  </types>
+  <message name="proccessRequest">
+    <part name="parameters" element="tns:proccessRequest" />
+  </message>
+  <message name="proccessRequestResponse">
+    <part name="parameters" element="tns:proccessRequestResponse" />
+  </message>
+  <portType name="BiomedServices">
+    <operation name="proccessRequest">
+      <input message="tns:proccessRequest" />
+      <output message="tns:proccessRequestResponse" />
+    </operation>
+  </portType>
+  <binding name="BiomedServicesSoapBinding" type="tns:BiomedServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="proccessRequest">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="BiomedServices">
+    <port name="BiomedServicesSoap" binding="tns:BiomedServicesSoapBinding">
+      <soap:address location="http://10.0.0.5:8080/HIS_Biomed/BiomedServices" />
+    </port>
+  </service>
+</definitions>

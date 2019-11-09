@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_RptVentasxTurno" targetNamespace="http://tempuri.org/ds_RptVentasxTurno.xsd" xmlns:mstns="http://tempuri.org/ds_RptVentasxTurno.xsd" xmlns="http://tempuri.org/ds_RptVentasxTurno.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_RptVentasxTurno" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ds_RptVentasxTurno" msprop:Generator_UserDSName="ds_RptVentasxTurno">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VentasxTurno" msprop:Generator_TableClassName="VentasxTurnoDataTable" msprop:Generator_TableVarName="tableVentasxTurno" msprop:Generator_TablePropName="VentasxTurno" msprop:Generator_RowDeletingName="VentasxTurnoRowDeleting" msprop:Generator_RowChangingName="VentasxTurnoRowChanging" msprop:Generator_RowEvHandlerName="VentasxTurnoRowChangeEventHandler" msprop:Generator_RowDeletedName="VentasxTurnoRowDeleted" msprop:Generator_UserTableName="VentasxTurno" msprop:Generator_RowChangedName="VentasxTurnoRowChanged" msprop:Generator_RowEvArgName="VentasxTurnoRowChangeEvent" msprop:Generator_RowClassName="VentasxTurnoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cPerJuridica" msprop:Generator_ColumnVarNameInTable="columncPerJuridica" msprop:Generator_ColumnPropNameInRow="cPerJuridica" msprop:Generator_ColumnPropNameInTable="cPerJuridicaColumn" msprop:Generator_UserColumnName="cPerJuridica" type="xs:string" minOccurs="0" />
+              <xs:element name="cPerApellido" msprop:Generator_ColumnVarNameInTable="columncPerApellido" msprop:Generator_ColumnPropNameInRow="cPerApellido" msprop:Generator_ColumnPropNameInTable="cPerApellidoColumn" msprop:Generator_UserColumnName="cPerApellido" type="xs:string" minOccurs="0" />
+              <xs:element name="nTurno" msprop:Generator_ColumnVarNameInTable="columnnTurno" msprop:Generator_ColumnPropNameInRow="nTurno" msprop:Generator_ColumnPropNameInTable="nTurnoColumn" msprop:Generator_UserColumnName="nTurno" type="xs:int" minOccurs="0" />
+              <xs:element name="cTurno" msprop:Generator_ColumnVarNameInTable="columncTurno" msprop:Generator_ColumnPropNameInRow="cTurno" msprop:Generator_ColumnPropNameInTable="cTurnoColumn" msprop:Generator_UserColumnName="cTurno" type="xs:string" minOccurs="0" />
+              <xs:element name="cTipoAtencion" msprop:Generator_ColumnVarNameInTable="columncTipoAtencion" msprop:Generator_ColumnPropNameInRow="cTipoAtencion" msprop:Generator_ColumnPropNameInTable="cTipoAtencionColumn" msprop:Generator_UserColumnName="cTipoAtencion" type="xs:string" minOccurs="0" />
+              <xs:element name="fImporte" msprop:Generator_ColumnVarNameInTable="columnfImporte" msprop:Generator_ColumnPropNameInRow="fImporte" msprop:Generator_ColumnPropNameInTable="fImporteColumn" msprop:Generator_UserColumnName="fImporte" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_RptComisionMedico" targetNamespace="http://tempuri.org/ds_RptComisionMedico.xsd" xmlns:mstns="http://tempuri.org/ds_RptComisionMedico.xsd" xmlns="http://tempuri.org/ds_RptComisionMedico.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_RptComisionMedico" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ds_RptComisionMedico" msprop:Generator_UserDSName="ds_RptComisionMedico">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ComisionMedico" msprop:Generator_TableClassName="ComisionMedicoDataTable" msprop:Generator_TableVarName="tableComisionMedico" msprop:Generator_TablePropName="ComisionMedico" msprop:Generator_RowDeletingName="ComisionMedicoRowDeleting" msprop:Generator_RowChangingName="ComisionMedicoRowChanging" msprop:Generator_RowEvHandlerName="ComisionMedicoRowChangeEventHandler" msprop:Generator_RowDeletedName="ComisionMedicoRowDeleted" msprop:Generator_UserTableName="ComisionMedico" msprop:Generator_RowChangedName="ComisionMedicoRowChanged" msprop:Generator_RowEvArgName="ComisionMedicoRowChangeEvent" msprop:Generator_RowClassName="ComisionMedicoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nSolAdmNumero" msprop:Generator_ColumnVarNameInTable="columnnSolAdmNumero" msprop:Generator_ColumnPropNameInRow="nSolAdmNumero" msprop:Generator_ColumnPropNameInTable="nSolAdmNumeroColumn" msprop:Generator_UserColumnName="nSolAdmNumero" type="xs:string" minOccurs="0" />
+              <xs:element name="cPerCodigo" msprop:Generator_ColumnVarNameInTable="columncPerCodigo" msprop:Generator_ColumnPropNameInRow="cPerCodigo" msprop:Generator_ColumnPropNameInTable="cPerCodigoColumn" msprop:Generator_UserColumnName="cPerCodigo" type="xs:string" minOccurs="0" />
+              <xs:element name="Medico" msprop:Generator_ColumnVarNameInTable="columnMedico" msprop:Generator_ColumnPropNameInRow="Medico" msprop:Generator_ColumnPropNameInTable="MedicoColumn" msprop:Generator_UserColumnName="Medico" type="xs:string" minOccurs="0" />
+              <xs:element name="Paciente" msprop:Generator_ColumnVarNameInTable="columnPaciente" msprop:Generator_ColumnPropNameInRow="Paciente" msprop:Generator_ColumnPropNameInTable="PacienteColumn" msprop:Generator_UserColumnName="Paciente" type="xs:string" minOccurs="0" />
+              <xs:element name="dFecRegistro" msprop:Generator_ColumnVarNameInTable="columndFecRegistro" msprop:Generator_ColumnPropNameInRow="dFecRegistro" msprop:Generator_ColumnPropNameInTable="dFecRegistroColumn" msprop:Generator_UserColumnName="dFecRegistro" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Muestras" msprop:Generator_ColumnVarNameInTable="columnMuestras" msprop:Generator_ColumnPropNameInRow="Muestras" msprop:Generator_ColumnPropNameInTable="MuestrasColumn" msprop:Generator_UserColumnName="Muestras" type="xs:string" minOccurs="0" />
+              <xs:element name="nImpTotal" msprop:Generator_ColumnVarNameInTable="columnnImpTotal" msprop:Generator_ColumnPropNameInRow="nImpTotal" msprop:Generator_ColumnPropNameInTable="nImpTotalColumn" msprop:Generator_UserColumnName="nImpTotal" type="xs:double" minOccurs="0" />
+              <xs:element name="nPorcentaje" msprop:Generator_ColumnVarNameInTable="columnnPorcentaje" msprop:Generator_ColumnPropNameInRow="nPorcentaje" msprop:Generator_ColumnPropNameInTable="nPorcentajeColumn" msprop:Generator_UserColumnName="nPorcentaje" type="xs:double" minOccurs="0" />
+              <xs:element name="fPorcentajeCom" msprop:Generator_ColumnVarNameInTable="columnfPorcentajeCom" msprop:Generator_ColumnPropNameInRow="fPorcentajeCom" msprop:Generator_ColumnPropNameInTable="fPorcentajeComColumn" msprop:Generator_UserColumnName="fPorcentajeCom" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

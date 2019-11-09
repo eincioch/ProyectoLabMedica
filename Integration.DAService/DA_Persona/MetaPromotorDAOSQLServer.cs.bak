@@ -1,0 +1,216 @@
+﻿using System;
+using System.Collections.Generic;
+
+//Clases VS
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+
+//Referencias
+using Integration.BE.Persona;
+using Integration.BE.Periodo;
+using Integration.Conection;
+using Integration.BE.Interface;
+
+namespace Integration.DAService.DA_Persona
+{
+    public class MetaPromotorDAOSQLServer
+    {
+        #region Get MetaPromotor
+        public List<MetaPromotor> Get_MetaPromotor(MetaPromotor objeto)
+        {
+            try
+            {
+                clsConection Obj = new clsConection();
+                string Cadena = Obj.GetConexionString("Naylamp");
+
+                using (SqlConnection cn = new SqlConnection(Cadena))
+                {
+                    List<MetaPromotor> metaPromotors = new List<MetaPromotor>();
+                    MetaPromotor metaPromotor;
+
+
+                    cn.Open();
+                    using (SqlCommand cm = new SqlCommand())
+                    {
+                        cm.CommandText = "[usp_Get_MetaPromotor]";
+                        cm.CommandType = CommandType.StoredProcedure;
+                        cm.Parameters.AddWithValue("@cPerJurCodigo", objeto.cPerJurCodigo);
+                        cm.Parameters.AddWithValue("@nIntSrcCodigo", objeto.nIntSrcCodigo);
+                        cm.Parameters.AddWithValue("@nPrdCodigo", objeto.nPrdCodigo);
+                        cm.Parameters.AddWithValue("@cPerPromCodigo", objeto.cPerPromCodigo);
+
+                        cm.Connection = cn;
+
+                        using (SqlDataReader sqlDataReader = cm.ExecuteReader())
+                        {
+                            while (sqlDataReader.Read())
+                            {
+                                metaPromotor = new MetaPromotor();
+                                BE_ReqInterface reqInterface = new BE_ReqInterface();
+
+                                metaPromotor.cPerJurCodigo = sqlDataReader.GetString(0);
+                                metaPromotor.nIntSrcCodigo = sqlDataReader.GetInt32(1);
+                                metaPromotor.nPrdCodigo = sqlDataReader.GetInt32(2);
+                                metaPromotor.cPerPromCodigo = sqlDataReader.GetString(3);
+                                metaPromotor.nIntDstCodigo = sqlDataReader.GetInt32(4);
+                                metaPromotor.nMetValor =  sqlDataReader.GetDecimal(5); 
+                                metaPromotor.cPerUsuCrea = sqlDataReader.GetString(6);
+                                metaPromotor.dFechaCrea = sqlDataReader.GetDateTime(7);
+                                
+                                //if (!sqlDataReader.IsDBNull(8))
+                                //    metaPromotor.cPerUsuModi = sqlDataReader.GetString(8);
+                                //else
+                                //    metaPromotor.cPerUsuModi = "";
+
+                                metaPromotor.cPerUsuModi = sqlDataReader.IsDBNull(8) ? "" : sqlDataReader.GetString(8); 
+
+                                //reader.IsDBNull(1) ? null : reader.GetString(reader.GetOrdinal("EMAIL")),
+
+                                if (!sqlDataReader.IsDBNull(9))
+                                    metaPromotor.dFechaModi = sqlDataReader.GetDateTime(9);
+                                else
+                                    metaPromotor.dFechaModi = DateTime.Now ;
+
+                                reqInterface.nIntCodigo = sqlDataReader.GetInt32(4);
+                                reqInterface.cIntNombre = sqlDataReader.GetString(10);
+                                reqInterface.cIntDescripcion = sqlDataReader.GetString(11);
+                                //agregar linea (NO OLVIDAR)
+                                metaPromotor.objInterface = reqInterface;
+
+                                //si estas llenando en List<>
+                                metaPromotors.Add(metaPromotor);
+                            }
+                        }
+                        return metaPromotors;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        #endregion
+
+        #region Insert MetaPromotor
+        public bool Insert_MetaPromotor(MetaPromotor metaPromotor)
+        {
+            bool exito = false;
+            try
+            {
+                clsConection Obj = new clsConection();
+                string Cadena = Obj.GetConexionString("Naylamp");
+
+                using (SqlConnection cn = new SqlConnection(Cadena))
+                {
+                    cn.Open();
+
+                    using (SqlCommand cm = new SqlCommand())
+                    {
+                        cm.CommandText = "[dbo].[usp_Insert_MetaPromotor]";
+                        cm.CommandType = CommandType.StoredProcedure;
+                        cm.Parameters.AddWithValue("@cPerJurCodigo", metaPromotor.cPerJurCodigo);
+                        cm.Parameters.AddWithValue("@nIntSrcCodigo", metaPromotor.nIntSrcCodigo);
+                        cm.Parameters.AddWithValue("@nPrdCodigo", metaPromotor.nPrdCodigo);
+                        cm.Parameters.AddWithValue("@cPerPromCodigo", metaPromotor.cPerPromCodigo);
+                        cm.Parameters.AddWithValue("@nIntDstCodigo", metaPromotor.nIntDstCodigo);
+                        cm.Parameters.AddWithValue("@nMetValor", metaPromotor.nMetValor);
+                        cm.Parameters.AddWithValue("@cPerUsuCrea", metaPromotor.cPerUsuCrea);
+
+                        cm.Connection = cn;
+
+                        if (cm.ExecuteNonQuery() > 0){
+                            exito = true;
+                        }
+                        else throw new ApplicationException("Se ha producido un error procedimiento almacenado: [usp_Insert_MetaPromotor]; Consulte con el Administrador del Sistema");
+                    }
+                }
+
+            } //47317083
+            catch (Exception)
+            {
+                throw;
+            }
+            return exito;
+        }
+        #endregion
+
+        #region Update MetaPromotor
+        public bool Update_MetaPromotor(MetaPromotor metaPromotor)
+        {
+            bool exito = false;
+            try
+            {
+                clsConection Obj = new clsConection();
+                string Cadena = Obj.GetConexionString("Naylamp");
+
+                using (SqlConnection cn = new SqlConnection(Cadena))
+                {
+                    cn.Open();
+
+                    using (SqlCommand cm = new SqlCommand())
+                    {
+                        cm.CommandText = "[dbo].[usp_Update_MetaPromotor]";
+                        cm.CommandType = CommandType.StoredProcedure;
+                        cm.Parameters.AddWithValue("@cPerJurCodigo", metaPromotor.cPerJurCodigo);
+                        cm.Parameters.AddWithValue("@nIntSrcCodigo", metaPromotor.nIntSrcCodigo);
+                        cm.Parameters.AddWithValue("@nPrdCodigo", metaPromotor.nPrdCodigo);
+                        cm.Parameters.AddWithValue("@cPerPromCodigo", metaPromotor.cPerPromCodigo);
+                        cm.Parameters.AddWithValue("@nIntDstCodigo", metaPromotor.nIntDstCodigo);
+                        cm.Parameters.AddWithValue("@nMetValor", metaPromotor.nMetValor);
+                        cm.Parameters.AddWithValue("@cPerUsuModi", metaPromotor.cPerUsuModi);
+
+                        cm.Connection = cn;
+
+                        if (cm.ExecuteNonQuery() > 0)
+                        {
+                            exito = true;
+                        }
+                        else throw new ApplicationException("se ha producido un error procedimiento almacenado: [usp_Update_MetaPromotor]; Consulte con el Administrador del Sistema");
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return exito;
+        }
+        #endregion
+
+        #region Consultar Avance de Meta
+        public DataTable Get_MetaPromotor_Avance(Periodo periodo)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                clsConection Obj = new clsConection();
+                string Cadena = Obj.GetConexionString("Naylamp");
+
+                using (SqlConnection cn = new SqlConnection(Cadena))
+                {
+                    cn.Open();
+                    using (SqlCommand cm = new SqlCommand())
+                    {
+                        cm.CommandText = "[usp_Get_MetaPromotor_Avance]";
+                        cm.CommandType = CommandType.StoredProcedure;
+                        cm.Parameters.AddWithValue("@nPrdCodigo", periodo.nPrdCodigo);
+                        cm.Connection = cn;
+
+                        using (SqlDataReader dr = cm.ExecuteReader())
+                            dt.Load(dr);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return dt;
+        }
+        #endregion
+
+    }
+}

@@ -1,0 +1,32 @@
+nCtaCteSerCodigo	Number	
+cPerJurCodigo	String	25	
+cCtaCteSerJerarquia	String	6	MBI001
+cCtaCteSerKeyWord	String	500	CARIOTIPO
+nBieCodigo	Number	
+nCtaCteSerAfecto	Number	
+nCtaCteSerExonerado	Number	
+nMonCodigo	Number	
+nCtaCteSerImpMin	Number	
+nCtaCteSerImpMax	Number	
+nCtaCteSerImpDef	Number		218.00
+dCtaCTeSerFecRegistro	Date	
+nSeuCodigo	Number	
+nCtaCteSerFacturable	Number	
+nCtaCteTipoCta	Number	
+nCtaAlterna	String	20	
+cRequisitoIndica	String	800	
+cPreparaPaciente	String	800	
+cIdentificaMuestra	String	800	
+cEntregaResultado	String	800	
+cRecepcionMuestra	String	800	
+cConservaTransporte	String	800	
+cEstabilidadMuestra	String	800	
+nCantMuestra	Number	
+nCodEnvase	Number	
+nCodTipoMuestra	Number	
+cVolumMinimo	String	20	
+cDiaHoraProceso	String	20
+nTiempoEntrega	Number		
+nProceso	Number		
+nEstado	Number		
+nHorasProceso	Number		
